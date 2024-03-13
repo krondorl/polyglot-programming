@@ -16,6 +16,31 @@ TypeScript, Go, and Rust are currently in this repo, but I might add more langua
 
 The code is in the `src/` folder.
 
+## Installation of Programming Language Tools
+
+First, the TypeScript, Go, and Rust tools must be installed.
+
+- [Install TypeScript (Node.js)](https://nodejs.org/en)
+- [Install Go](https://go.dev/doc/install)
+- [Install Rust](https://www.rust-lang.org/tools/install)
+
+## Running the Code
+
+Go to the language folder then execute the following:
+
+### Typescript
+
+1. `npm install` (for the first time to install packages)
+1. `npm run dev` (to run the program)
+
+### Go
+
+`go run .\filename.go` for example: `go run .\dog_age_calculator.go`
+
+### Rust
+
+`cargo run`
+
 ## License
 
 Please see the [LICENSE file](LICENSE).
