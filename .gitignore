@@ -1,0 +1,18 @@
+# VS Code settings
+.vscode/
+
+# Rust
+src/**/target
+
+# Node.js
+src/**/node_modules
+
+# Go
+src/**/*.exe
+src/**/*.exe~
+src/**/*.dll
+src/**/*.so
+src/**/*.dylib
+src/**/*.test
+src/**/*.out
+src/**/go.work

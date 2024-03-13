@@ -1,0 +1,14 @@
+{
+  "name": "dog-age-calculator",
+  "version": "0.1.0",
+  "description": "",
+  "scripts": {
+    "dev": "tsx src/main.ts"
+  },
+  "keywords": [],
+  "author": "Adam Burucs",
+  "license": "MIT",
+  "devDependencies": {
+    "tsx": "^4.7.1"
+  }
+}
