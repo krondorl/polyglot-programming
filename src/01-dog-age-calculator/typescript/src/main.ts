@@ -1,3 +1,11 @@
+/*!
+ * Polyglot Programming
+ *
+ * Copyright (c) 2024 Adam Burucs
+ *
+ * MIT Licensed
+ */
+
 type AgeResult = number | string;
 
 function calculate_dog_age(age: number): AgeResult {

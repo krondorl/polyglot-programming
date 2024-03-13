@@ -1,3 +1,11 @@
+/*!
+ * Polyglot Programming
+ *
+ * Copyright (c) 2024 Adam Burucs
+ *
+ * MIT Licensed
+ */
+
 fn calculate_dog_age(age: u8) -> Result<u8, String> {
     if age < 1 {
         return Err(String::from("Error: age should be at least 1."));
