@@ -14,6 +14,9 @@
  *  Copyright (c) 2023 Adam Burucs. MIT license.
  */
 
+// The node:crypto module provides cryptographically secure random numbers.
+import * as crypto from "crypto";
+
 const VOWELS = ["a", "e", "i", "o", "u"] as const;
 const CONSONANTS = [
   "b",
@@ -41,10 +44,8 @@ const CONSONANTS = [
 const NUMBERS = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"] as const;
 const SPECIALS = ["!", "+", "#", "/", "$", "?"] as const;
 
-function generateRandomRange(min: number, max: number): number {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+function generateRandomRange(max: number): number {
+  return crypto.randomInt(max);
 }
 
 function generateNumbers(length: number): string {
@@ -52,7 +53,7 @@ function generateNumbers(length: number): string {
     const generatedNumbers: string[] = [];
     let i = 0;
     while (i < length) {
-      let randomNumber = generateRandomRange(0, 9);
+      let randomNumber = generateRandomRange(9);
       generatedNumbers.push(NUMBERS[randomNumber]);
       i += 1;
     }
@@ -63,7 +64,7 @@ function generateNumbers(length: number): string {
 }
 
 function generateSpecials(): string {
-  const randomRange = generateRandomRange(0, 5);
+  const randomRange = generateRandomRange(5);
   return SPECIALS[randomRange];
 }
 
@@ -73,7 +74,7 @@ function generateWords(length: number): string {
     let i = 0;
     while (i < length) {
       if (i % 2 === 0) {
-        let randomConsonant = generateRandomRange(0, 20);
+        let randomConsonant = generateRandomRange(20);
         if (i === 0 || i % 4 === 0) {
           let uppercase = CONSONANTS[randomConsonant].toUpperCase();
           generatedWords.push(uppercase);
@@ -81,7 +82,7 @@ function generateWords(length: number): string {
           generatedWords.push(CONSONANTS[randomConsonant]);
         }
       } else {
-        let randomVowel = generateRandomRange(0, 4);
+        let randomVowel = generateRandomRange(4);
         generatedWords.push(VOWELS[randomVowel]);
       }
       i += 1;
