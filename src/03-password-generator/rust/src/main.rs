@@ -14,7 +14,13 @@
  *  Copyright (c) 2023 Adam Burucs. MIT license.
  */
 
-use rand::Rng;
+use rand::prelude::*;
+/**
+ * A cryptographically secure random number generator that uses the ChaCha algorithm.
+ * https://crates.io/crates/rand_chacha
+ * https://rust-random.github.io/rand/rand_chacha/
+ */
+use rand_chacha::ChaCha20Rng;
 
 const VOWELS: [&str; 5] = ["a", "e", "i", "o", "u"];
 const CONSONANTS: [&str; 21] = [
@@ -28,8 +34,9 @@ fn generate_numbers(length: u8) -> Result<String, String> {
     if (1..=4).contains(&length) {
         let mut generated_numbers: String = Default::default();
         let mut i = 0;
+        let mut rng = ChaCha20Rng::from_entropy();
         while i < length {
-            let random_number = rand::thread_rng().gen_range(0..9);
+            let random_number = rng.gen_range(0..9);
             generated_numbers.push_str(NUMBERS[random_number]);
             i += 1;
         }
@@ -42,7 +49,8 @@ fn generate_numbers(length: u8) -> Result<String, String> {
 }
 
 fn generate_specials() -> String {
-    let random_special = rand::thread_rng().gen_range(0..5);
+    let mut rng = ChaCha20Rng::from_entropy();
+    let random_special = rng.gen_range(0..5);
     SPECIALS[random_special].to_string()
 }
 
@@ -51,8 +59,9 @@ fn generate_words(length: u8) -> Result<String, String> {
         let mut generated_words: String = Default::default();
         let mut i = 0;
         while i < length {
+            let mut rng = ChaCha20Rng::from_entropy();
             if i % 2 == 0 {
-                let random_consonant = rand::thread_rng().gen_range(0..20);
+                let random_consonant = rng.gen_range(0..20);
                 if i == 0 || i % 4 == 0 {
                     let uppercase = str::to_uppercase(CONSONANTS[random_consonant]);
                     generated_words.push_str(&uppercase);
@@ -60,7 +69,7 @@ fn generate_words(length: u8) -> Result<String, String> {
                     generated_words.push_str(CONSONANTS[random_consonant]);
                 }
             } else {
-                let random_vowel = rand::thread_rng().gen_range(0..4);
+                let random_vowel = rng.gen_range(0..4);
                 generated_words.push_str(VOWELS[random_vowel]);
             }
             i += 1;
@@ -126,6 +135,11 @@ fn generate_password(length: Option<u8>) -> Result<String, String> {
 
 fn main() {
     println!("Password generator");
-    let p32 = generate_password(Some(32)).unwrap();
-    println!("{:#?}", p32);
+    let p32 = generate_password(Some(32));
+    match p32 {
+        Ok(password_value) => {
+            println!("{}", password_value);
+        }
+        Err(e) => println!("Error: {}", e),
+    }
 }
