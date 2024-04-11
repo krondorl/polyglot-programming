@@ -17,10 +17,10 @@
 package main
 
 import (
+	"crypto/rand" // Use cryptographically secure random numbers
 	"fmt"
-	"math/rand"
+	"math/big"
 	"strings"
-	"time"
 )
 
 var VOWELS = []string{"a", "e", "i", "o", "u"}
@@ -31,9 +31,13 @@ var CONSONANTS = []string{
 var NUMBERS = []string{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}
 var SPECIALS = []string{"!", "+", "#", "/", "$", "?"}
 
-func generateRandomRange(min, max uint8) uint8 {
-	rand.Seed(time.Now().UnixNano())
-	return uint8(rand.Intn(int(max)-int(min)+1) + int(min))
+func generateRandomRange(max uint8) uint8 {
+	maxNum := big.NewInt(int64(max))
+	randomNum, err := rand.Int(rand.Reader, maxNum)
+	if err != nil {
+		return 0
+	}
+	return uint8(randomNum.Uint64())
 }
 
 func generateNumbers(length uint8) string {
@@ -41,7 +45,7 @@ func generateNumbers(length uint8) string {
 		generatedNumbers := make([]string, 0)
 		var i uint8 = 0
 		for i < length {
-			randomNumber := generateRandomRange(0, 9)
+			randomNumber := generateRandomRange(9)
 			generatedNumbers = append(generatedNumbers, NUMBERS[randomNumber])
 			i += 1
 		}
@@ -52,7 +56,7 @@ func generateNumbers(length uint8) string {
 }
 
 func generateSpecials() string {
-	randomRange := generateRandomRange(0, 5)
+	randomRange := generateRandomRange(5)
 	return SPECIALS[randomRange]
 }
 
@@ -62,7 +66,7 @@ func generateWords(length uint8) string {
 		var i uint8 = 0
 		for i < length {
 			if i%2 == 0 {
-				var randomConsonant uint8 = generateRandomRange(0, 20)
+				var randomConsonant uint8 = generateRandomRange(20)
 				if i == 0 || i%4 == 0 {
 					var uppercase string = strings.ToUpper(CONSONANTS[randomConsonant])
 					generatedWords = append(generatedWords, uppercase)
@@ -70,7 +74,7 @@ func generateWords(length uint8) string {
 					generatedWords = append(generatedWords, CONSONANTS[randomConsonant])
 				}
 			} else {
-				var randomVowel uint8 = generateRandomRange(0, 4)
+				var randomVowel uint8 = generateRandomRange(4)
 				generatedWords = append(generatedWords, VOWELS[randomVowel])
 			}
 			i += 1
@@ -106,6 +110,6 @@ func generatePassword(length uint8) string {
 
 func main() {
 	fmt.Println("Password generator")
-	p32 := generatePassword(32) // entropy seems low, @todo refactor
-	fmt.Println(p32)            // eg. MemeMemeMemeMemeMemeMemeMemeM77/
+	p32 := generatePassword(32)
+	fmt.Println(p32)
 }
