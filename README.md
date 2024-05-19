@@ -23,7 +23,7 @@ First, the TypeScript, Go, and Rust tools must be installed.
 - [Install TypeScript (Node.js)](https://nodejs.org/en)
 - [Install Go](https://go.dev/doc/install)
 - [Install Rust](https://www.rust-lang.org/tools/install)
-- [Install Java SE with Amazon Corretto](https://aws.amazon.com/corretto/?filtered-posts.sort-by=item.additionalFields.createdDate&filtered-posts.sort-order=desc)
+- [Install Java SE with Amazon Corretto](https://aws.amazon.com/corretto/?filtered-posts.sort-by=item.additionalFields.createdDate&filtered-posts.sort-order=desc) also [Install Maven](https://www.baeldung.com/install-maven-on-windows-linux-mac)
 
 ## Running the Code
 
