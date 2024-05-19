@@ -1,4 +1,4 @@
-<img src="doc/typescript-original.svg" width="128"/> <img src="doc/go-original-wordmark.svg" width="128"/> <img src="doc/rust-original.svg" width="128"/>
+<img src="doc/typescript-original.svg" width="128"/> <img src="doc/go-original-wordmark.svg" width="128"/> <img src="doc/rust-original.svg" width="128"/> <img src="doc/java-original-wordmark.svg" width="128"/>
 
 # Polyglot Programming
 
@@ -10,7 +10,7 @@ I was inspired by ThePrimeagen's course ["Polyglot Programming: TypeScript, Go, 
 
 ## Language
 
-TypeScript, Go, and Rust are currently in this repo, but I might add more languages later.
+TypeScript, Go, Rust and Java are currently in this repo, but I might add more languages later.
 
 ## Source Code
 
@@ -23,6 +23,7 @@ First, the TypeScript, Go, and Rust tools must be installed.
 - [Install TypeScript (Node.js)](https://nodejs.org/en)
 - [Install Go](https://go.dev/doc/install)
 - [Install Rust](https://www.rust-lang.org/tools/install)
+- [Install Java SE with Amazon Corretto](https://aws.amazon.com/corretto/?filtered-posts.sort-by=item.additionalFields.createdDate&filtered-posts.sort-order=desc)
 
 ## Running the Code
 
@@ -40,6 +41,14 @@ Go to the language folder then execute the following:
 ### Rust
 
 `cargo run`
+
+### Java
+
+```
+mvn compile
+mvn package
+mvn exec:java -Dexec.mainClass="com.yourpackage.MainClass"
+```
 
 ## License
 
