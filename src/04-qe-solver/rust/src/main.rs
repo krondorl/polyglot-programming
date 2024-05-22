@@ -1,3 +1,11 @@
+/*!
+ * Polyglot Programming
+ *
+ * Copyright (c) 2024 Adam Burucs
+ *
+ * MIT Licensed
+ */
+
 #[allow(dead_code)]
 #[derive(Debug)]
 struct RealRoots {

@@ -1,3 +1,11 @@
+/*!
+ * Polyglot Programming
+ *
+ * Copyright (c) 2024 Adam Burucs
+ *
+ * MIT Licensed
+ */
+
 enum RootType {
   RealRoots,
   OnlyRoot,
