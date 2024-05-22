@@ -1,3 +1,11 @@
+/*!
+ * Polyglot Programming
+ *
+ * Copyright (c) 2024 Adam Burucs
+ *
+ * MIT Licensed
+ */
+
 // I followed along
 // Programming a Guessing Game in Rust!
 // https://www.youtube.com/watch?v=H0xBSbnQYds

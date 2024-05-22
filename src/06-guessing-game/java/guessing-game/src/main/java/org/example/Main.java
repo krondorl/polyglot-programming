@@ -1,3 +1,11 @@
+/*!
+ * Polyglot Programming
+ *
+ * Copyright (c) 2024 Adam Burucs
+ *
+ * MIT Licensed
+ */
+
 package org.example;
 
 import java.util.Random;
