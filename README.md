@@ -52,6 +52,12 @@ mvn package
 mvn exec:java -Dexec.mainClass="com.yourpackage.MainClass"
 ```
 
+### C
+
+```
+gcc -o dog-age-calculator main.c
+```
+
 ## License
 
 Please see the [LICENSE file](LICENSE).
