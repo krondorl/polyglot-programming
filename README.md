@@ -1,4 +1,5 @@
 <img src="doc/typescript-original.svg" width="128"/> <img src="doc/go-original-wordmark.svg" width="128"/> <img src="doc/rust-original.svg" width="128"/> <img src="doc/java-original-wordmark.svg" width="128"/>
+<img src="doc/c-original.svg" width="128"/>
 
 # Polyglot Programming
 
@@ -24,6 +25,7 @@ First, the TypeScript, Go, and Rust tools must be installed.
 - [Install Go](https://go.dev/doc/install)
 - [Install Rust](https://www.rust-lang.org/tools/install)
 - [Install Java SE with Amazon Corretto](https://aws.amazon.com/corretto/?filtered-posts.sort-by=item.additionalFields.createdDate&filtered-posts.sort-order=desc) also [Install Maven](https://www.baeldung.com/install-maven-on-windows-linux-mac)
+- [Install MinGW, Windows for compiling C language](https://code.visualstudio.com/docs/cpp/config-mingw) also [How to Install MinGW](https://semicolon.dev/windows/how-to-install-mingw-gcc-g-compiler-windows-10-11-2023)
 
 ## Running the Code
 
