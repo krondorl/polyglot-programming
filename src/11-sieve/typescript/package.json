@@ -1,0 +1,19 @@
+{
+  "name": "qe-solver",
+  "version": "0.1.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/main.ts",
+    "test": "vitest"
+  },
+  "keywords": [],
+  "author": "Adam Burucs",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.11.28",
+    "tsx": "^4.7.1",
+    "typescript": "^5.5.3",
+    "vitest": "^2.0.3"
+  }
+}
