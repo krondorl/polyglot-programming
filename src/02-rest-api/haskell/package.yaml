@@ -4,7 +4,7 @@ github: "krondorl/polyglot-programming"
 license: MIT
 author: "Adam Burucs"
 maintainer: "example@example.com"
-copyright: "2024 Adam Burucs"
+copyright: "2024- Adam Burucs"
 
 extra-source-files:
   - README.md

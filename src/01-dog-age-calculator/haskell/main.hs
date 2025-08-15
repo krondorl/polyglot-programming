@@ -1,7 +1,7 @@
 {-
  * Polyglot Programming
  *
- * Copyright (c) 2024 Adam Burucs
+ * Copyright (c) 2024- Adam Burucs
  *
  * MIT Licensed
 -}

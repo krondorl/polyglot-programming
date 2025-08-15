@@ -11,7 +11,7 @@ homepage:       https://github.com/krondorl/polyglot-programming#readme
 bug-reports:    https://github.com/krondorl/polyglot-programming/issues
 author:         Adam Burucs
 maintainer:     example@example.com
-copyright:      2024 Adam Burucs
+copyright:      2024- Adam Burucs
 license:        MIT
 license-file:   LICENSE
 build-type:     Simple
